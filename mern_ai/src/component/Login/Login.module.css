@@ -1,0 +1,188 @@
+.Login {
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+        radial-gradient(circle at 15% 15%, rgba(245, 158, 11, 0.22), transparent 35%),
+        radial-gradient(circle at 85% 0%, rgba(14, 165, 233, 0.24), transparent 40%),
+        linear-gradient(170deg, #fefce8 0%, #eff6ff 60%, #ecfeff 100%);
+}
+
+.loginShell {
+    width: min(1120px, 100%);
+    min-height: 620px;
+    border-radius: 26px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    box-shadow: 0 30px 60px rgba(15, 23, 42, 0.18);
+    border: 1px solid rgba(148, 163, 184, 0.26);
+}
+
+.loginShowcase {
+    padding: 48px;
+    background: linear-gradient(130deg, #111827 0%, #1d4ed8 55%, #0891b2 100%);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 18px;
+}
+
+.showcaseEyebrow {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 12px;
+    color: #a5f3fc;
+}
+
+.showcaseTitle {
+    margin: 10px 0;
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    line-height: 1.05;
+}
+
+.showcaseText {
+    margin: 0;
+    color: #dbeafe;
+    font-size: 17px;
+    line-height: 1.5;
+    max-width: 420px;
+}
+
+.showcaseStats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.statCard {
+    border: 1px solid rgba(191, 219, 254, 0.32);
+    border-radius: 14px;
+    background: rgba(15, 23, 42, 0.28);
+    padding: 12px;
+}
+
+.statValue {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #f8fafc;
+}
+
+.statLabel {
+    margin: 4px 0 0;
+    font-size: 13px;
+    color: #bfdbfe;
+}
+
+.loginCard {
+    padding: 46px 38px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+}
+
+.loginCardTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.loginCardTitle h2 {
+    margin: 0;
+    font-size: 2rem;
+    color: #0f172a;
+}
+
+.keyBadge {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #fbbf24, #f97316);
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginHint {
+    margin: 0;
+    color: #475569;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.featureList {
+    display: grid;
+    gap: 8px;
+}
+
+.featureItem {
+    border: 1px solid #dbeafe;
+    background: #f8fbff;
+    color: #1e3a8a;
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.googleBtn {
+    padding: 16px 18px;
+    box-sizing: border-box;
+    width: 100%;
+    background: #ffffff;
+    color: #0f172a;
+    border-radius: 14px;
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    border: 1px solid #cbd5e1;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.googleBtn:hover {
+    transform: translateY(-1px);
+    border-color: #93c5fd;
+    box-shadow: 0 12px 26px rgba(37, 99, 235, 0.15);
+}
+
+.trustText {
+    margin: 0;
+    font-size: 12px;
+    color: #64748b;
+}
+
+@media screen and (max-width: 900px) {
+    .loginShell {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .loginShowcase {
+        padding: 30px;
+    }
+
+    .loginCard {
+        padding: 28px 22px;
+    }
+
+    .showcaseStats {
+        grid-template-columns: 1fr;
+    }
+}

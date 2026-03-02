@@ -1,0 +1,161 @@
+.sideBar {
+    --text-main: #e2e8f0;
+    --text-soft: #94a3b8;
+    --line: rgba(148, 163, 184, 0.25);
+
+    flex: 0.24;
+    min-width: 260px;
+    color: var(--text-main);
+    min-height: 100vh;
+    flex-shrink: 0;
+    padding: 18px 14px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-family: "Manrope", "Plus Jakarta Sans", sans-serif;
+    background:
+        radial-gradient(circle at 10% 0%, rgba(45, 212, 191, 0.2), transparent 45%),
+        radial-gradient(circle at 100% 20%, rgba(59, 130, 246, 0.18), transparent 45%),
+        linear-gradient(180deg, #0b1120 0%, #0f172a 100%);
+}
+
+.brandBlock {
+    border: 1px solid var(--line);
+    background: rgba(15, 23, 42, 0.72);
+    border-radius: 18px;
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    backdrop-filter: blur(8px);
+}
+
+.brandIconWrap {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #22d3ee, #3b82f6);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.brandTextBlock {
+    min-width: 0;
+}
+
+.brandEyebrow {
+    margin: 0;
+    font-size: 11px;
+    color: #67e8f9;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.sideBarTopContent {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-top: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sideBarOptionsBlock {
+    border: 1px solid var(--line);
+    background: rgba(15, 23, 42, 0.58);
+    border-radius: 18px;
+    padding: 12px;
+    display: grid;
+    gap: 30px;
+}
+
+.navTitle {
+    margin: 0 0 6px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #38bdf8;
+    padding-left: 8px;
+}
+
+.sideBarOption {
+    padding: 12px 12px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--text-main);
+    text-decoration: none;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.sideBarOption:hover {
+    border-color: rgba(56, 189, 248, 0.4);
+    background: rgba(30, 41, 59, 0.75);
+    transform: translateY(-1px);
+}
+
+.selectedOption {
+    background: linear-gradient(110deg, rgba(14, 165, 233, 0.32), rgba(37, 99, 235, 0.28));
+    border-color: rgba(125, 211, 252, 0.5);
+}
+
+.sideBarFooter {
+    margin-top: auto;
+    border: 1px solid var(--line);
+    background: rgba(15, 23, 42, 0.72);
+    border-radius: 16px;
+    padding: 12px 14px;
+}
+
+.footerLabel {
+    margin: 0;
+    font-size: 11px;
+    color: var(--text-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.footerName {
+    margin: 6px 0 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: #f8fafc;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 900px) {
+    .sideBar {
+        min-width: 100%;
+        min-height: auto;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .sideBarOptionsBlock {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .navTitle {
+        grid-column: 1 / -1;
+    }
+
+    .sideBarFooter {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 560px) {
+    .sideBarOptionsBlock {
+        grid-template-columns: 1fr;
+    }
+}
