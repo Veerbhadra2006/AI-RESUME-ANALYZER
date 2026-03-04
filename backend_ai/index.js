@@ -5,20 +5,17 @@ const cors = require("cors");
 const app = express();
 const PORT = process.env.PORT || 4000;
 
-const path = require("path");
-const fs = require("fs");
+// const path = require("path");
+// const fs = require("fs");
 
 require("./conn");
+
 app.use(cors({
-  origin: [
-    "https://ai-resume-analyzer-omega-seven.vercel.app",
-    "http://localhost:5173"
-  ],
-  credentials: true,
+  origin: true,
+  credentials: true
 }));
 
 app.use(express.json());
-
 
 const UserRoutes = require("./Routes/user");
 const ResumeRoutes = require("./Routes/resume");
