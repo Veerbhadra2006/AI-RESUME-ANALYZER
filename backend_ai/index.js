@@ -11,8 +11,8 @@ const fs = require("fs");
 require("./conn");
 app.use(express.json());
 app.use(cors({
+  origin: process.env.FRONTEND_URL,
   credentials: true,
-  origin: "http://localhost:5173",
 }));
 
 const UserRoutes = require("./Routes/user");
@@ -25,16 +25,16 @@ app.get("/api/health", (req, res) => {
 });
 
 
-const frontendDistPath = path.join(__dirname, "../mern_ai/dist");
-const fallbackBuildPath = path.join(__dirname, "build");
-const staticPath = fs.existsSync(frontendDistPath) ? frontendDistPath : fallbackBuildPath;
+// const frontendDistPath = path.join(__dirname, "../mern_ai/dist");
+// const fallbackBuildPath = path.join(__dirname, "build");
+// const staticPath = fs.existsSync(frontendDistPath) ? frontendDistPath : fallbackBuildPath;
 
-app.use(express.static(staticPath));
+// app.use(express.static(staticPath));
 
 // SPA fallback for non-API routes
-app.use((req, res) => {
-  res.sendFile(path.join(staticPath, "index.html"));
-});
+// app.use((req, res) => {
+//   res.sendFile(path.join(staticPath, "index.html"));
+// });
 
 app.listen(PORT, () => {
   console.log("backend is running on port", PORT);
