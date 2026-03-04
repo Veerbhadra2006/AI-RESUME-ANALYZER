@@ -9,11 +9,17 @@ const path = require("path");
 const fs = require("fs");
 
 require("./conn");
-app.use(express.json());
 app.use(cors({
-  origin: process.env.FRONTEND_URL,
+  origin: [
+    "https://ai-resume-analyzer-omega-seven.vercel.app",
+    "http://localhost:5173"
+  ],
   credentials: true,
 }));
+app.options("*", cors());
+
+app.use(express.json());
+
 
 const UserRoutes = require("./Routes/user");
 const ResumeRoutes = require("./Routes/resume");
